@@ -1,0 +1,210 @@
+/* FONDO pantalla */
+body {
+    transition: background-color 0.5s, color 0.5s; /* Transiciones suaves para el fondo y el color del texto */
+}
+
+body.blanco-y-negro {
+   
+    color: #fff; /* Texto blanco */
+}
+
+/* Estilos para los botones de menú */
+.menuss {
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    flex-direction: row; /* Alinea los elementos en fila */
+    justify-content: flex-start; /* Alinea los botones al inicio */
+}
+
+.submenus {
+    position: relative; /* Necesario para que el submenú se posicione correctamente */
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+.submenus .submenubtn {
+    font-size: 16px; /* Tamaño de fuente del botón */
+    border: none; /* Sin borde */
+    outline: none; /* Sin contorno */
+    color: white; /* Color del texto del botón */
+    padding: 14px 16px; /* Espaciado interno del botón */
+    background-color: #007BFF; /* Color de fondo azul */
+    cursor: pointer; /* Cambia el cursor a pointer para indicar que es clickeable */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.submenus .submenubtn:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Escala el botón al pasar el mouse */
+}
+
+.submenus .submenubtn:active {
+    transform: scale(0.95); /* Efecto de presión al hacer clic */
+}
+
+/* Estilos para los enlaces en el submenú */
+.submenu_content {
+    display: none; /* Oculta el submenú por defecto */
+    position: absolute; /* Posiciona el submenú de forma absoluta */
+    background-color: #f9f9f9; /* Color de fondo del submenú */
+    min-width: 160px; /* Ancho mínimo del submenú */
+    z-index: 1; /* Asegura que el submenú esté por encima de otros elementos */
+    top: 100%; /* Coloca el menú desplegable justo debajo del botón */
+    left: 0; /* Asegura que se alinee con el botón */
+    opacity: 0; /* Inicialmente oculto */
+    visibility: hidden; /* Inicialmente oculto */
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Transición más lenta para la visibilidad */
+}
+
+.submenus:hover .submenu_content,
+.submenus:focus-within .submenu_content { 
+    display: block; /* Despliega el contenido del submenú cuando se pasa el mouse o está enfocado */
+    opacity: 1; /* Hace visible el submenú */
+    visibility: visible; /* Asegura que sea visible */
+}
+
+/* Estilo de los enlaces del submenú */
+.submenu_content a {
+    color: #333; /* Color del texto de los enlaces */
+    padding: 12px 16px; /* Espaciado interno de los enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+    display: block; /* Los convierte en elementos de bloque */
+    text-align: left; /* Alinea el texto a la izquierda */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el fondo y el color */
+    border-radius: 4px; /* Bordes redondeados para los enlaces */
+}
+
+.submenu_content a:hover {
+    background-color: #007BFF; /* Color de fondo al pasar el mouse sobre los enlaces */
+    color: white; /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Cambiar fondo del botón al estar enfocado */
+.submenus:focus-within .submenubtn {
+    background-color: #0056b3; /* Cambia el fondo del botón cuando está enfocado */
+}
+
+/* Imagen de ejemplo */
+.imagenEC1SS {
+    width: 50%;
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 250px; /* Ajusta el tamaño máximo de la imagen */
+    display: block; /* Convierte la imagen en un elemento de bloque */
+    margin: 20px auto; /* Centra la imagen */
+}
+
+/* Estilos adicionales para mejorar la visibilidad del texto de los botones */
+.submenus.active .submenubtn {
+    background-color: #0056b3; /* Color de fondo cuando el submenú está activo */
+    color: white; /* Color del texto cuando el submenú está activo */
+}
+
+.titulo {
+    font-size: 24px; /* Tamaño de fuente para los títulos principales */
+    color: #333; /* Color del texto */
+    margin-top: 20px; /* Margen superior */
+}
+
+.subtitulo {
+    font-size: 20px; /* Tamaño de fuente para subtítulos */
+    color: #555; /* Color del texto */
+    margin-top: 15px; /* Margen superior */
+}
+
+.descripcion {
+    font-size: 16px; /* Tamaño de fuente para párrafos */
+    color: #666; /* Color del texto */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.formula {
+    font-style: italic; /* Estilo en cursiva para fórmulas */
+    color: #007BFF; /* Color azul para destacar */
+    margin: 10px 0; /* Margen vertical */
+}
+
+/* Animación para el texto en movimiento */
+.moving_text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007BFF; /* Color del texto */
+    animation: move 4s infinite alternate; /* Llama a la animación 'move' */
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0); /* Posición inicial */
+    }
+    100% {
+        transform: translateX(100px); /* Mueve el texto 100px a la derecha */
+    }
+}
+
+/* MOVIMIENTO DE IMAGEN */
+.imagenM {
+    position: absolute; /* Permite posicionar el elemento de manera absoluta */
+    top: 9px; /* Distancia desde la parte superior */
+    right: 15px; /* Distancia desde la derecha */
+    width: 300px; /* Ajusta el tamaño según lo necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+    animation: float 3s ease-in-out infinite; /* Llama a la animación 'float' */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Mueve hacia arriba */
+    }
+    100% {
+        transform: translateY(0); /* Regresa a la posición inicial */
+    }
+}
+.imagenM2 {
+    position: absolute; /* Permite posicionar el elemento de manera absoluta */
+    top: 10px; /* Distancia desde la parte superior */
+    right: 15px; /* Distancia desde la derecha */
+    width: 200px; /* Ajusta el tamaño según lo necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+    z-index: 10; /* Asegura que la imagen esté por encima de otros elementos */
+    animation: float 3s ease-in-out infinite; /* Llama a la animación 'float' */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Posición inicial */
+    }
+    50% {
+        transform: translateY(-10px); /* Mueve hacia arriba */
+    }
+    100% {
+        transform: translateY(0); /* Regresa a la posición inicial */
+    }
+}
+
+
+
+.inversion {
+    width: 300px; /* Ancho del elemento */
+    height: 100px; /* Alto del elemento */
+    background-color: #007BFF; /* Color de fondo */
+    color: white; /* Color del texto */
+    display: flex; /* Centra el texto */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    border-radius: 8px; /* Bordes redondeados */
+    animation: flip 5s infinite; /* Llama a la animación 'flip' */
+    perspective: 1000px; /* Da una perspectiva 3D */
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg); /* Posición inicial */
+    }
+    50% {
+        transform: rotateY(180deg); /* Gira 180 grados */
+    }
+    100% {
+        transform: rotateY(360deg); /* Completa el giro */
+    }
+}
